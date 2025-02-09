@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/waanbi/SPUMEMBER-EX.git'
+                print 'Git Clone'
             }
         }
 
