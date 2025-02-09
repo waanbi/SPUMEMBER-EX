@@ -10,25 +10,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
-                    print 'Docker Build'
-                }
+                print 'Docker Build'
             }
         }
 
         stage('Deploy Image') {
             steps {
-                script {
-                    print 'Docker Deploy IMG'	
-                }
+                print 'Docker Deploy Image'
             }
         }
 
         stage('Testing') {
             steps {
-                script {
-                    print 'Testing'
-                }
+                print 'Robot Testing'
             }
         }
     }
