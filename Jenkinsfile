@@ -9,7 +9,7 @@ pipeline {
             branches: [[name: '*/main']],
             userRemoteConfigs: [[
                 credentialsId: 'nakares',
-                url: 'https://github.com/SPUMEMBER-EX/SPUMEMBER-EX.git'
+                url: 'git@github.com:waanbi/SPUMEMBER-EX.git'
             ]]]
                 )
                  
