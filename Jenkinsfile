@@ -4,21 +4,26 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                print 'Git Clone'
+                checkout([
+                     $class: 'GitSCM',
+            branches: [[name: '*/main']],
+            userRemoteConfigs: [[
+                credentialsId: 'nakares',
+                url: 'https://github.com/SPUMEMBER-EX/SPUMEMBER-EX.git'
+            ]]]
+                )
+                 
             }
+          
         }
 
-        stage('Build') {
+        stage('Build&Deploy+') {
             steps {
                 print 'Docker Build'
             }
         }
 
-        stage('Deploy Image') {
-            steps {
-                print 'Docker Deploy Image'
-            }
-        }
+       
 
         stage('Testing') {
             steps {
