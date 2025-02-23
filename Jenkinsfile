@@ -20,6 +20,16 @@ pipeline {
         stage('Build&Deploy+') {
             steps {
                 print 'Docker Build'
+                script {
+                    bat 'docker build -t spumember .'
+                    print 'Docker Deploy'
+                }
+                print "Docker Run"
+                script {
+                    bat "docker rm -f spumember"
+                    bat "docker run -d --name spumember -p 80:80 spumember"
+                    print "Docker Run SUCCESS"
+                }
             }
         }
 
